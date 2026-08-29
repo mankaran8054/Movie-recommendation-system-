@@ -1,4 +1,3 @@
-# Movie-recommendation-system-
 # Movie Recommendation System
 
 ## Project Description
