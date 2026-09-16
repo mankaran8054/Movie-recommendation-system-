@@ -96,56 +96,6 @@ def create_user(name, email):
 
     connection.close()
 
-    return user_id, name, email
-
-
-def get_user_by_email(email):
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    cursor.execute(
-        """
-        SELECT id, name, email
-        FROM users
-        WHERE email = ?
-        """,
-        (email,)
-    )
-
-    user = cursor.fetchone()
-
-    connection.close()
-
-    return user
-
-
-def create_user(name, email):
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    created_at = datetime.now().strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
-
-    cursor.execute(
-        """
-        INSERT INTO users
-        (name, email, created_at)
-        VALUES (?, ?, ?)
-        """,
-        (
-            name,
-            email,
-            created_at
-        )
-    )
-
-    connection.commit()
-
-    user_id = cursor.lastrowid
-
-    connection.close()
-
     return (
         user_id,
         name,
