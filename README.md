@@ -40,7 +40,7 @@ The recommendation system uses the following weights:
 
 - Selected movie: 50%
 - Watch history: 30%
-- Favorite movies: 20%
+- Favorite movies:  20%
 
 Movies that have already been watched are removed from the final results.
 
